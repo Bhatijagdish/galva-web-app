@@ -171,6 +171,4 @@ cython_debug/
 pdf/
 static/
 templates/
-app.py
-*.txt
 

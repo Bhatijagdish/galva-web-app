@@ -6,5 +6,6 @@ galva-be/static/
 galva-be/templates/
 .env
 .idea/
+app.py
 
 
