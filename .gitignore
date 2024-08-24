@@ -1,0 +1,10 @@
+.venv/
+**/__Pycache__/
+__Pycache__/
+galva-be/pdf/*
+galva-be/static/
+galva-be/templates/
+.env
+.idea/
+
+

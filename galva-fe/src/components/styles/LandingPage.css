@@ -1,0 +1,22 @@
+@keyframes bubbleBackground {
+    0% {
+      background-image: url('/svg1bubble.svg');
+    }
+    25% {
+      background-image: url('/svg2bubble.svg');
+    }
+    50% {
+      background-image: url('/svg3bubble.svg');
+    }
+    75% {
+      background-image: url('/svg4bubble.svg');
+    }
+    100% {
+      background-image: url('/svg1bubble.svg');
+    }
+  }
+  
+  .bubble-background {
+    animation: bubbleBackground 20s infinite;
+  }
+  

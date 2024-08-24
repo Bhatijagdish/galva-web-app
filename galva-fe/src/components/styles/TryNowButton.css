@@ -1,0 +1,33 @@
+.trynow-button-bg {
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .trynow-button:hover .trynow-button-bg {
+    filter: brightness(2);
+    transform: scale(0.95);
+    box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  }
+ 
+  .trynow-button-text {
+    
+    font-family: Helvetica;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 1rem;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    background: linear-gradient(93deg, #C39FFF 0%, #7AF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  

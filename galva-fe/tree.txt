@@ -1,0 +1,42 @@
+Folder PATH listing
+Volume serial number is FE76-E114
+C:.
+|   App.css
+|   App.tsx
+|   index.css
+|   main.tsx
+|   vite-env.d.ts
+|   
++---adapter
+|       langchain.ts
+|       openai.ts
+|       
++---assets
+|       react.svg
+|       
++---components
+|   |   chat.tsx
+|   |   dashboardSelection.tsx
+|   |   login.tsx
+|   |   pastConversations.tsx
+|   |   theme-provider.tsx
+|   |   
+|   \---ui
+|           avatar.tsx
+|           badge.tsx
+|           button.tsx
+|           card.tsx
+|           dropdown-menu.tsx
+|           input.tsx
+|           select.tsx
+|           sheet.tsx
+|           
++---data
+|       conversation-starters.ts
+|       history.ts
+|       models.ts
+|       personas.ts
+|       
+\---lib
+        utils.ts
+        

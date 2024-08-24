@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: ./galva-be
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    restart: always
+    networks:
+      - network-backend
+      - network-frontend
+
+  frontend:
+    depends_on:
+      - backend
+    restart: always
+    build:
+      context: ./galva-fe
+      dockerfile: Dockerfile
+    ports:
+      - 3000:80
+    networks:
+      - network-frontend
+
+
+networks:
+  network-backend: {}
+  network-frontend: {}
