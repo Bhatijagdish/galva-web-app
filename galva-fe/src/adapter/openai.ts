@@ -1,7 +1,7 @@
 import { StreamingAdapterObserver, StreamSend } from "@nlux/react";
 
 // API endpoint for the custom server
-const apiServerUrl = "https://galva.ai/api/bot/conversations";
+const apiServerUrl = "https://www.galva.ai/api/bot/conversations";
 
 // Adapter to send query to the server and receive a stream of chunks as response
 export const openAiAdapter: StreamSend = async (
