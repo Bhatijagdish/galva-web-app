@@ -16,7 +16,7 @@ const FROMPATRICK = ({ className = "" }) => {
       </div>
       <div className="w-full mq950:w-[48.5rem] flex flex-col items-start justify-end p-4 box-border min-w-0 max-w-full z-1">
         <div className="flex flex-col items-start justify-start gap-4 max-w-full">
-          <b className=" text-21xl text-base mq950:text-xl z-1">
+          <b className=" text-21xl mq950:text-xl z-1">
             A decade of experience in the electroplating industry.
           </b>
           <div className="font-extralight font-inter z-1 text-1.5 mq950:text-base">
