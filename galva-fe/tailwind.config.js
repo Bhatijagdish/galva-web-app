@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      zIndex: {
+        '5': '5',
+      },
+      
       colors: {
         white: "#fff",
         black: "#000",
@@ -24,6 +28,7 @@ module.exports = {
       },
       spacing: {},
       fontFamily: {
+        'jura': ['Jura', 'sans-serif'],
         "inria-sans": "'Inria Sans'",
         helvetica: "Helvetica",
         inter: "Inter",

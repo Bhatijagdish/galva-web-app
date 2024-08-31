@@ -15,7 +15,7 @@ const FrameComponent = ({ className = "" }) => {
       <div className="w-[103.188rem] flex flex-col items-start justify-start gap-[1rem] max-w-full">
         <div className="self-stretch flex flex-row items-start justify-center py-[0rem] px-[1.25rem] box-border max-w-full">
         <div className="flex items-center justify-center">
-  <h3 className="m-0 h-[4rem] w-[38.063rem] relative text-inherit font-normal font-[inherit] inline-block max-w-full z-[2] mq950:text-[2.375rem] mq450:text-[1.813rem]">
+  <h3 className="m-0 h-[4rem] relative text-inherit font-normal font-[inherit] inline-block max-w-full z-[2] mq950:text-[2.375rem] mq450:text-[1.513rem]">
     WE KNOW THE PROBLEM
   </h3>
 </div>

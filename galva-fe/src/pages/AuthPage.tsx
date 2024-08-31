@@ -106,7 +106,7 @@ const AuthPage = () => {
     <div className={`container ${signUpMode ? 'sign-up-mode' : ''}`}>
       <div
         className="background-image"
-        style={{ backgroundImage: `url(${images[currentImage]})` }}
+        style={{ background: `url(${images[currentImage]})` }}
       ></div>
       <div className="forms-container">
         <div className={`signin-signup ${signUpMode ? 'sign-up-mode' : ''}`}>
@@ -134,21 +134,7 @@ const AuthPage = () => {
               />
             </div>
             <LoginBtn onClick={handleSignIn} />
-            <p className="social-text">Or Sign in with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faGoogle} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-            </div>
+           
           </form>
           <form className="sign-up-form" onSubmit={handleSignUp}>
             <h2 className="title">Sign up</h2>
@@ -194,21 +180,7 @@ const AuthPage = () => {
               />
             </div>
             <SignUpBtn onClick={handleSignUp} />
-            <p className="social-text">Or Sign up with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faGoogle} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
-            </div>
+           
           </form>
         </div>
       </div>

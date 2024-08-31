@@ -4,7 +4,8 @@ import FrameComponent from "../components/FrameComponent";
 import SolutionButton from "../components/SolutionButton";
 import FrameComponent1 from "../components/FrameComponent1";
 import FrameComponent2 from "../components/FrameComponent2";
-
+import SupportSection from '../components/SupportSection';
+import GalvaInfoBox from '@/components/offerings';
 const bubbleBackground = keyframes`
   0% { background-image: url('/svg1bubble.svg'); }
   25% { background-image: url('/svg2bubble.svg'); }
@@ -21,14 +22,14 @@ const BackgroundDiv = styled.div`
   position: fixed;
   top: 0rem;
   left: 0.687rem;
-  z-index: 1;
+  z-index: 0;
   animation: ${bubbleBackground} 20s infinite;
   background-size: cover;
 `;
 
 const LANDINGPAGE = () => {
   return (
-    <div className="w-full relative bg-white overflow-hidden flex flex-col items-end justify-start pt-[0rem] px-[0rem] pb-[1.25rem] box-border leading-[normal] tracking-[normal] gap-[4.5rem]">
+    <div className="w-full relative bg-white overflow-hidden flex flex-col items-center justify-start pt-[0rem] px-[0rem] pb-[1.25rem] box-border leading-[normal] tracking-[normal] gap-[4.5rem]">
       <div className="self-stretch h-[306.25rem] relative bg-white hidden z-[0]" />
       <div className="self-stretch h-[76.875rem] relative hidden mix-blend-hard-light z-[1]" />
       <BackgroundDiv />
@@ -38,7 +39,7 @@ const LANDINGPAGE = () => {
       />
       <LANDINGVID />
       <FrameComponent />
-      <section className="self-stretch flex flex-row items-start justify-center pt-[0rem] px-[1.25rem] pb-[2.562rem] box-border max-w-full text-center text-[2rem] text-black font-jura">
+      <section className="self-stretch flex flex-row items-start justify-center pt-[0rem] px-[1.25rem] pb-[2.562rem] box-border max-w-full text-center text-[2rem] text-black font-Jura">
         <div className="w-[103.125rem] flex flex-col items-start justify-start gap-[3.75rem] max-w-full gap-[1.875rem]">
           <div className="self-stretch relative z-[2] mq950:text-[1.625rem] mq450:text-[1.188rem]">
             <p className="m-0">
@@ -52,7 +53,9 @@ const LANDINGPAGE = () => {
           <SolutionButton />
         </div>
       </section>
-      <FrameComponent1 />
+      <SupportSection />
+      <GalvaInfoBox />
+      {/* <FrameComponent1 /> */}
       <FrameComponent2 />
     </div>
   );
