@@ -1,10 +1,10 @@
-user www-data;
+# user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log warn;
 pid /var/run/nginx.pid;
 
 events {
-    worker_connections 4096;
+    worker_connections 1024;
 }
 
 http {
@@ -25,32 +25,28 @@ http {
     gzip_buffers 4 32k;
     gzip_comp_level 5;
     gzip_http_version 1.1;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript application/x-font-ttf font/opentype application/vnd.ms-fontobject image/svg+xml;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
 
     upstream backend {
         server backend:8003;
     }
 
     upstream frontend {
-        server frontend:80;
+        server localhost:80;
     }
 
     server {
         listen 80;
-        server_name galva.ai www.galva.ai;
+	server_name galva.ai www.galva.ai;
+        
 
-        # Serve frontend by default
         location / {
             proxy_pass http://frontend;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_connect_timeout 30;
-            proxy_read_timeout 30;
-            proxy_send_timeout 30;
         }
-
 
         # Forward /api/* requests to the backend
         location /api/ {
@@ -71,11 +67,9 @@ http {
         }
 
         
-        location ~* \.(ts|js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        location ~* \.(ts|js|css|png|jpg|jpeg|gif|ico|svg)$ {
             expires 30d;
-            add_header Cache-Control "public, no-transform";
             log_not_found off;
         }
-
     }
 }

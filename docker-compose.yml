@@ -9,13 +9,13 @@ services:
       - "8003:8003"
     restart: always
     networks:
-      - backend-network
+      - galva-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
       interval: 30s
       timeout: 10s
       retries: 3
-      
+
   frontend:
     depends_on:
       backend:
@@ -25,7 +25,7 @@ services:
       context: ./galva-fe
       dockerfile: Dockerfile
     networks:
-      - frontend-network
+      - galva-network
 
   nginx:
     image: nginx:latest
@@ -37,4 +37,8 @@ services:
       - backend
       - frontend
     networks:
-      - frontend-network
+      - galva-network
+
+networks:
+  galva-network:
+    driver: bridge
