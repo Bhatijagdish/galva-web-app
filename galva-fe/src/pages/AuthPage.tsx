@@ -13,6 +13,28 @@ import svg4bubble from './images/svg4bubble.svg';
 import { signUp, signIn } from '../services/authService';
 import { useNavigate, useLocation } from 'react-router-dom'; 
 import { useAuth } from '../contexts/AuthProvider';
+import styled, { keyframes } from 'styled-components';
+const bubbleBackground = keyframes`
+  0% { background-image: url('/svg1bubble.svg'); }
+  25% { background-image: url('/svg2bubble.svg'); }
+  50% { background-image: url('/svg3bubble.svg'); }
+  75% { background-image: url('/svg4bubble.svg'); }
+  100% { background-image: url('/svg1bubble.svg'); }
+`;
+
+const BackgroundDiv = styled.div`
+  width: 124.5rem;
+  height: 97.5rem;
+  position: absolute;
+  margin: 0;
+  position: fixed;
+  scale: 1.5;
+  top: 0rem;
+  left: 0.687rem;
+  z-index: 0;
+  animation: ${bubbleBackground} 20s infinite;
+  background-size: cover;
+`;
 
 const images = [svg1bubble, svg2bubble, svg3bubble, svg4bubble];
 
@@ -47,13 +69,13 @@ const AuthPage = () => {
     setSignUpMode(mode === 'signup');
   }, [location.search]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 2000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+  //   }, 2000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -104,10 +126,8 @@ const AuthPage = () => {
   };
   return (
     <div className={`container ${signUpMode ? 'sign-up-mode' : ''}`}>
-      <div
-        className="background-image"
-        style={{ background: `url(${images[currentImage]})` }}
-      ></div>
+
+     <BackgroundDiv/>
       <div className="forms-container">
         <div className={`signin-signup ${signUpMode ? 'sign-up-mode' : ''}`}>
           <form className="sign-in-form" onSubmit={handleSignIn}>

@@ -1,8 +1,9 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+
 import ChatHeader from './Header';
 import ChatOptionsContainer from './ChatOptionsContainer';
 import './styles/dashboard.css';
+import styled, { keyframes } from 'styled-components';
 const bubbleBackground = keyframes`
   0% { background-image: url('/svg1bubble.svg'); }
   25% { background-image: url('/svg2bubble.svg'); }
