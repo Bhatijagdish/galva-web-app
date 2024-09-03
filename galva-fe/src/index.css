@@ -67,6 +67,7 @@
 .nlux-AiChat-root > .nlux-chatRoom-container > .nlux-launchPad-container,
 .nlux-AiChat-root > .nlux-chatRoom-container > .nlux-conversation-container {
   z-index: 30;
+  
 }
 
 /* .nlux-comp-composer > textarea,

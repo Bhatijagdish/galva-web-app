@@ -94,7 +94,7 @@ const AuthPage = () => {
         console.log(`Session ID: ${sessionId}`); // Log session ID
         console.log(`User ID: ${userId}`); // Log user ID
         login(userId, sessionId); // Set user ID and session ID in AuthProvider
-        navigate('/chat'); // Redirect to /chat route on successful sign-in
+        navigate('/dashboard'); // Redirect to /chat route on successful sign-in
       } else {
         setMessage('An error occurred. Please try again.');
       }

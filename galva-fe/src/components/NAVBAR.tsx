@@ -17,7 +17,7 @@ const NAVBAR = ({ className = "" }) => {
         alt=""
         src="/navbar-logo@2x.png"
       />
-      <div className="absolute h-[31.11%] w-[21.28%] top-[45.56%] right-[39.36%] bottom-[23.33%] left-[39.36%] flex flex-row items-start justify-between gap-[1.25rem] z-[2]">
+      <div className="absolute h-[31.11%] w-[21.28%] top-[45.56%] right-[39.36%] bottom-[23.33%] left-[39.36%] flex flex-row items-start justify-between gap-[1.25rem] z-[2] hide-on-mobile">
         <HOME />
         <FEATURES />
         <ABOUTUS />

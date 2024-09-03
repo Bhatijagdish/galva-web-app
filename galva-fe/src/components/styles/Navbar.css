@@ -9,4 +9,9 @@
   .navbar-container:hover .navbar-brightness {
     filter: brightness(2);
   }
-  
+ /* Hide Home, AboutUs, and Features on Mobile */
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}

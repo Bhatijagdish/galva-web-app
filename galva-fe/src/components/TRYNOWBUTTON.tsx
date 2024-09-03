@@ -6,7 +6,7 @@ const TRYNOWBUTTON = ({ className = "" }) => {
   const navigate = useNavigate(); // Initialize navigate
 
   const handleClick = () => {
-    navigate("/chat"); // Redirect to /chat route
+    navigate("/dashboard"); // Redirect to /chat route
   };
 
   return (

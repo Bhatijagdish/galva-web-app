@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styled, { keyframes } from 'styled-components';
 import { useTheme } from "./theme-provider";
 import { Button } from "./ui/button";
 import {
@@ -14,7 +15,27 @@ import { openAiAdapter } from "../adapter/openai";
 import { AiChat, useAsStreamAdapter } from "@nlux/react";
 import "@nlux/themes/nova.css";
 import { conversationStarters } from "../data/conversation-starters";
+const bubbleBackground = keyframes`
+  0% { background-image: url('/svg1bubble.svg'); }
+  25% { background-image: url('/svg2bubble.svg'); }
+  50% { background-image: url('/svg3bubble.svg'); }
+  75% { background-image: url('/svg4bubble.svg'); }
+  100% { background-image: url('/svg1bubble.svg'); }
+`;
 
+const BackgroundDiv = styled.div`
+  width: 124.5rem;
+  height: 97.5rem;
+  position: absolute;
+  margin: 0;
+  position: fixed;
+  top: -10rem;
+  scale: 1.5;
+  left: 0.687rem;
+  z-index: 1 !important;
+  animation: ${bubbleBackground} 20s infinite;
+  background-size: cover;
+`;
 export function Chat() {
   const { setTheme, theme } = useTheme();
   const [conversationIndex, setConversationIndex] = useState(0);
@@ -37,9 +58,10 @@ export function Chat() {
   }, []);
 
   return (
+
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <div className="hidden border-y bg-muted/40 md:block">
-        <div className="flex h-full max-h-screen flex-col gap-2">
+        <BackgroundDiv/>  <div className="hidden border-y bg-muted/40 md:block z-5">
+        <div className="flex h-full max-h-screen flex-col gap-2 z-5 ">
           <div className="flex h-14 items-center bg-muted/90 px-4 lg:h-[60px] lg:px-6">
             <a href="/" className="flex items-center gap-2 font-semibold">
               <Avatar className="rounded-none w-32 h-12">
@@ -126,9 +148,9 @@ export function Chat() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
-                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span className="sr-only">Toggle theme</span>
+                <Sun className="z-5 h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="z-5 absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only z-5">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -141,19 +163,19 @@ export function Chat() {
                 Dark
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => setTheme("auto")}>
-                <Monitor className="h-[1.2rem] w-[1.2rem] mr-2" />
+                <Monitor className="h-[1.2rem] w-[1.2rem] mr-2 " />
                 System
               </DropdownMenuItem>
             </DropdownMenuContent>
             <button
               id="logoutButton"
-              className="bg-red-500 text-white m-4 px-6 py-2 rounded hover:bg-red-600"
+              className="bg-red-500 text-white m-4 px-6 py-2 rounded hover:bg-red-600 z-5"
             >
               Logout
             </button>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 z-5 backdrop-blur-[10px] bg-white bg-opacity-10 rounded-3xl shadow-lg border border-white border-solid">
           {conversations.length > 0 && conversations[conversationIndex] ? (
             <AiChat
               className="nlux-AiChat-style"
