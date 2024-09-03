@@ -10,7 +10,7 @@ export const openAiAdapter: StreamSend = async (
 ) => {
   const body = {
     query: prompt,
-    session_id: "your-session-id",  // Provide the actual session ID here
+    session_id: "givemesomesunshine",  // Provide the actual session ID here
     user_id: 1,  // Since the user_id is fixed at 1
   };
 
