@@ -1,11 +1,9 @@
-// src/pages/AuthPage.tsx
 import { useState, useEffect } from 'react';
 import './AuthPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faFacebookF, faTwitter, faGoogle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import LoginBtn from "../components/Login2";
-import SignUpBtn from "../components/Signup2";
+import SignUpBtn  from "../components/Signup2";
 import svg1bubble from './images/svg1bubble.svg';
 import svg2bubble from './images/svg2bubble.svg';
 import svg3bubble from './images/svg3bubble.svg';
@@ -16,9 +14,9 @@ import { useAuth } from '../contexts/AuthProvider';
 import styled, { keyframes } from 'styled-components';
 const bubbleBackground = keyframes`
   0% { background-image: url('/svg1bubble.svg'); }
-  25% { background-image: url('/svg2bubble.svg'); }
-  50% { background-image: url('/svg3bubble.svg'); }
-  75% { background-image: url('/svg4bubble.svg'); }
+  25% { background-image: url('/svg1bubble.svg'); }
+  50% { background-image: url('/svg1bubble.svg'); }
+  75% { background-image: url('/svg1bubble.svg'); }
   100% { background-image: url('/svg1bubble.svg'); }
 `;
 
@@ -32,7 +30,7 @@ const BackgroundDiv = styled.div`
   top: 0rem;
   left: 0.687rem;
   z-index: 0;
-  animation: ${bubbleBackground} 20s infinite;
+  background-image: url('/svg1bubble.svg');
   background-size: cover;
 `;
 
@@ -69,13 +67,6 @@ const AuthPage = () => {
     setSignUpMode(mode === 'signup');
   }, [location.search]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-  //   }, 2000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -111,16 +102,29 @@ const AuthPage = () => {
   
       if (response.access_token) {
         const sessionId = generateSessionId();
-        // Convert user_id to number
         const userId = response.user_id ? Number(response.user_id) : 0;
-        console.log(`Session ID: ${sessionId}`); // Log session ID
-        console.log(`User ID: ${userId}`); // Log user ID
-        login(userId, sessionId); // Set user ID and session ID in AuthProvider
-        navigate('/dashboard'); // Redirect to /chat route on successful sign-in
+  
+        // Store user ID and session ID in localStorage
+        localStorage.setItem('userId', userId.toString());
+        localStorage.setItem('sessionId', sessionId);
+  
+        // Log session ID and user ID (keeping existing console.log statements)
+        console.log(`Session ID: ${sessionId}`);
+        console.log(`User ID: ${userId}`);
+  
+        // Set user ID and session ID in AuthProvider (keeping existing functionality)
+        login(userId, sessionId);
+  
+        // Store access token in localStorage (new feature for broader use)
+        localStorage.setItem('accessToken', response.access_token);
+  
+        // Redirect to dashboard (keeping existing navigation)
+        navigate('/dashboard');
       } else {
         setMessage('An error occurred. Please try again.');
       }
     } catch (error) {
+      // Keeping existing error handling
       setMessage(error.message || 'An error occurred. Please try again.');
     }
   };

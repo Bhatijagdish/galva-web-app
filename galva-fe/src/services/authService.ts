@@ -1,7 +1,7 @@
 // src/services/authService.ts
 
-const API_URL = 'http://galva.ai/api/users'; // Replace with your actual API base URL
-
+// const API_URL = 'http://galva.ai/api/users'; // Replace with your actual API base URL
+const API_URL = 'http://localhost:8000/api/users'; 
 interface SignUpData {
   email: string;
   first_name: string;

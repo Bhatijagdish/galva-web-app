@@ -4,13 +4,16 @@ import LANDINGPAGE from "./pages/LANDINGPAGE..tsx";
 import AuthPage from "./pages/AuthPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./contexts/AuthProvider";
-import DashBoard from "./components/ChatStarter.tsx"
+import DashBoard from "./components/ChatStarter.tsx";
+import ProfilePage from "./components/ProfilePage.tsx";;
 
 function App() {
   return (
+    
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="/profile" element={<ProfilePage/>}/>
           <Route path="/" element={<LANDINGPAGE />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route

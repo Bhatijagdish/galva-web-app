@@ -33,7 +33,7 @@ const BackgroundDiv = styled.div`
   scale: 1.5;
   left: 0.687rem;
   z-index: 1 !important;
-  animation: ${bubbleBackground} 20s infinite;
+  background-image: url('/svg1bubble.svg');
   background-size: cover;
 `;
 export function Chat() {

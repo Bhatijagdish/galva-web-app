@@ -1,0 +1,20 @@
+.profile-page-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+  }
+  
+  .profile-picture-uploader img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }

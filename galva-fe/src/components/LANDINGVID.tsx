@@ -10,6 +10,7 @@ const LANDINGVID = ({ className = "" }) => {
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
         autoPlay
+        preload="auto"
         loop
         muted
       >
